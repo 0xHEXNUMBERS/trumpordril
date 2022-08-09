@@ -47,8 +47,8 @@
       const NIL = 0;
       const TRUMP = 1;
       const DRIL = 2;
-      const ANSWERS = [DRIL, TRUMP, DRIL, DRIL, TRUMP, DRIL, TRUMP, TRUMP, DRIL, DRIL, TRUMP, TRUMP, TRUMP, DRIL, TRUMP, DRIL, TRUMP, DRIL, DRIL, TRUMP, DRIL];
-      const GUESSES = [NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL];
+      const ANSWERS = [DRIL, TRUMP, DRIL, DRIL, TRUMP, DRIL, TRUMP, TRUMP, TRUMP, DRIL, DRIL, TRUMP, TRUMP, TRUMP, DRIL, TRUMP, DRIL, TRUMP, DRIL, DRIL, TRUMP, DRIL];
+      const GUESSES = [NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL, NIL];
 
       function nextQuestion(current_question) {
         var quiz_area = document.getElementById('quiz');
@@ -78,7 +78,7 @@
           scoreMessage.textContent = "You seem to have a tough time differentiating tweets made by a former president and a general parody account. :/";
         } else if (score < 18) {
           scoreMessage.textContent = "Hey, that's over 50%! How long did it take you to guess each question?";
-        } else if (score < 21) {
+        } else if (score < 22) {
           scoreMessage.textContent = "There were a few tweets that tripped you up, but all in all, you know your Trump tweets from your Dril tweets!";
         } else {
           scoreMessage.textContent = "Congrats, you're a true liberal! Now log off! You've been online too much.";
@@ -93,6 +93,9 @@
         var str = " this tweet was made by ";
         if (ANSWERS[current_question-1] == TRUMP) {
           str += "@realDonaldTrump";
+	  if (current_question == 9) {
+            str += " (in reference to the previous question :^) )";
+	  }
         } else {
           str += "@dril";
         }
@@ -254,7 +257,7 @@
       <div class="question">
         <div class="question-content" id="9">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">protected from all hater energy</p>
+          <p class="tweet">My Twitter has been seriously hacked--- and we are looking for the perpetrators.</p>
           <div class="buttons">
             <div id="9-guess-buttons">
               <button onclick="guess(9, TRUMP)">Trump</button>
@@ -269,7 +272,7 @@
       <div class="question">
         <div class="question-content" id="10">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">from here on, i will refer to the upcoming super bowl as the "treason bowl"</p>
+          <p class="tweet">protected from all hater energy</p>
           <div class="buttons">
             <div id="10-guess-buttons">
               <button onclick="guess(10, TRUMP)">Trump</button>
@@ -284,7 +287,7 @@
       <div class="question">
         <div class="question-content" id="11">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">we</p>
+          <p class="tweet">from here on, i will refer to the upcoming super bowl as the "treason bowl"</p>
           <div class="buttons">
             <div id="11-guess-buttons">
               <button onclick="guess(11, TRUMP)">Trump</button>
@@ -299,7 +302,7 @@
       <div class="question">
         <div class="question-content" id="12">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">i would like the extend my best wishes to all, even the haters and losers, on this special date, september 11th.</p>
+          <p class="tweet">we</p>
           <div class="buttons">
             <div id="12-guess-buttons">
               <button onclick="guess(12, TRUMP)">Trump</button>
@@ -314,7 +317,7 @@
       <div class="question">
         <div class="question-content" id="13">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">people are going crazy with my comments on diet coke (soda). let's face it -- this stuff just doesn't work. it makes you hungry.</p>
+          <p class="tweet">i would like the extend my best wishes to all, even the haters and losers, on this special date, september 11th.</p>
           <div class="buttons">
             <div id="13-guess-buttons">
               <button onclick="guess(13, TRUMP)">Trump</button>
@@ -329,7 +332,7 @@
       <div class="question">
         <div class="question-content" id="14">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">the economy is changing the way people think about culture.....</p>
+          <p class="tweet">people are going crazy with my comments on diet coke (soda). let's face it -- this stuff just doesn't work. it makes you hungry.</p>
           <div class="buttons">
             <div id="14-guess-buttons">
               <button onclick="guess(14, TRUMP)">Trump</button>
@@ -344,7 +347,7 @@
       <div class="question">
         <div class="question-content" id="15">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">"@YoungBasedGod_g: @??? your dad gives good brain?? damn" it's called genes!</p>
+          <p class="tweet">the economy is changing the way people think about culture.....</p>
           <div class="buttons">
             <div id="15-guess-buttons">
               <button onclick="guess(15, TRUMP)">Trump</button>
@@ -359,7 +362,7 @@
       <div class="question">
         <div class="question-content" id="16">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">@greggturkington glad to see james, friend to cinema, returning to us at long last. thank you</p>
+          <p class="tweet">"@YoungBasedGod_g: @??? your dad gives good brain?? damn" it's called genes!</p>
           <div class="buttons">
             <div id="16-guess-buttons">
               <button onclick="guess(16, TRUMP)">Trump</button>
@@ -374,7 +377,7 @@
       <div class="question">
         <div class="question-content" id="17">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">@ninetek then why do you follow me like a little puppy, moron?</p>
+          <p class="tweet">@greggturkington glad to see james, friend to cinema, returning to us at long last. thank you</p>
           <div class="buttons">
             <div id="17-guess-buttons">
               <button onclick="guess(17, TRUMP)">Trump</button>
@@ -389,7 +392,7 @@
       <div class="question">
         <div class="question-content" id="18">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">i am skeptical of the concept "too big to fail" mainly because i am extremely big and i fail constantly</p>
+          <p class="tweet">@ninetek then why do you follow me like a little puppy, moron?</p>
           <div class="buttons">
             <div id="18-guess-buttons">
               <button onclick="guess(18, TRUMP)">Trump</button>
@@ -404,7 +407,7 @@
       <div class="question">
         <div class="question-content" id="19">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">it is with a heavy heart that i must announce that the liberals are at it again</p>
+          <p class="tweet">i am skeptical of the concept "too big to fail" mainly because i am extremely big and i fail constantly</p>
           <div class="buttons">
             <div id="19-guess-buttons">
               <button onclick="guess(19, TRUMP)">Trump</button>
@@ -419,7 +422,7 @@
       <div class="question">
         <div class="question-content" id="20">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">the shirts and ties at macy's are so good - beautiful and do so well that guys like the one that sued me wrongly want a piece - l kicked his ass</p>
+          <p class="tweet">it is with a heavy heart that i must announce that the liberals are at it again</p>
           <div class="buttons">
             <div id="20-guess-buttons">
               <button onclick="guess(20, TRUMP)">Trump</button>
@@ -434,14 +437,29 @@
       <div class="question">
         <div class="question-content" id="21">
           <p class="prompt">Who made this tweet?</p>
-          <p class="tweet">jobs are under seige</p>
+          <p class="tweet">the shirts and ties at macy's are so good - beautiful and do so well that guys like the one that sued me wrongly want a piece - l kicked his ass</p>
           <div class="buttons">
             <div id="21-guess-buttons">
               <button onclick="guess(21, TRUMP)">Trump</button>
               <button onclick="guess(21, DRIL)">Dril</button>
             </div>
             <div class="continue" id="21-continue-button">
-              <button onclick="nextQuestion(21)">See Results</button>
+              <button onclick="nextQuestion(21)">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-content" id="22">
+          <p class="prompt">Who made this tweet?</p>
+          <p class="tweet">jobs are under seige</p>
+          <div class="buttons">
+            <div id="22-guess-buttons">
+              <button onclick="guess(22, TRUMP)">Trump</button>
+              <button onclick="guess(22, DRIL)">Dril</button>
+            </div>
+            <div class="continue" id="22-continue-button">
+              <button onclick="nextQuestion(22)">See Results</button>
             </div>
           </div>
         </div>
@@ -451,7 +469,7 @@
           <p class="prompt" id="score"></p>
           <p class="tweet" id="score-message"></p>
           <div class="buttons">
-            <p>Made with &#x1f49c; by <a href="https://twitter.com/0xHexnumbers">@0xHexnumbers</a></p>
+            <p>Made with &#x1f49c; by <a href="https://twitter.com/WonderJ13">@WonderJ13</a></p>
           </p>
         </div>
       </div>
